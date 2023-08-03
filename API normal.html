@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>API Normal</title>
+</head>
+<body>
+    <form name="myform">
+        name:<input type="text" name="name" />
+
+        <br><br><br>
+        From :<select name="drop">
+            <option>Select Below Currency</option>
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+        </select>
+        <br><br><br>
+        To:<select name="down">
+            <option>Selec Below Currency</option>
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+        </select>
+        <br><br>
+        Enter Amount:<input type="number" name="amount" />
+    </form>
+    <h1>Currency : <span id="id"></span></h1>
+    <br><br>
+    <script>
+
+        function DataFetching(){
+            data1 = document.myform.drop.value;
+            amount = parseFloat(document.myform.amount.value);
+            
+            fetch(`https://api.exchangerate-api.com/v4/latest/${data1}`)
+            .then(response=>response.json())
+            .then(data=>{
+                  
+                drop1 = document.myform.down.value;
+                rate = data.rates[drop1];
+
+                new_amount = amount*rate;
+                
+                document.getElementById("id").innerHTML = new_amount;
+                console.log(data);
+            })
+
+        }
+    </script>
+    <button type="submit" onclick="DataFetching()">Submit</button>
+</body>
+</html>
