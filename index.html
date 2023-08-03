@@ -2,27 +2,61 @@
 <html lang="en">
 <head>
     <title>API Normal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .h1{
+            background-color: antiquewhite;
+            height: 200px;
+        }
+        .h11{
+            padding-top: 70px;
+            padding-left: 30%;
+        }
+    </style>
 </head>
 <body>
-    <form name="myform">
-        name:<input type="text" name="name" />
+     <div class="container">
+        <div class="row">
+            <div class="col-4 offset-4">
+                  <h2>Currency Converter</h2>
+            </div>
+        </div>
+        <div class="row">
 
-        <br><br><br>
-        From :<select name="drop">
+            <div class="col-12">
+    <form name="myform">
+    
+        From :<select name="drop" class="form-select">
             <option>Select Below Currency</option>
             <option value="USD">USD</option>
             <option value="INR">INR</option>
         </select>
-        <br><br><br>
-        To:<select name="down">
+        
+        To:<select name="down" class="form-select">
             <option>Selec Below Currency</option>
             <option value="USD">USD</option>
             <option value="INR">INR</option>
         </select>
-        <br><br>
-        Enter Amount:<input type="number" name="amount" />
+        
+        Enter Amount:<input type="number" name="amount" class="form-control "/>
+        
     </form>
-    <h1>Currency : <span id="id"></span></h1>
+    <div class="row">
+        <div class="col-12">
+            <div class="h1">
+                <h1 class="mt-5 h11">Currency : <span id="id"></span></h1>
+            </div>
+        </div>
+    </div>
+    
+
+            </div>
+        </div>
+     </div>
+
+    
+   
     <br><br>
     <script>
 
@@ -45,6 +79,11 @@
 
         }
     </script>
-    <button type="submit" onclick="DataFetching()">Submit</button>
+    <div class="container">
+        <div class="row">
+            <input type="submit" onclick="DataFetching()" value="Convert" class="bg-success" />
+        </div>
+    </div>
+    
 </body>
 </html>
