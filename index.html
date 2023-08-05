@@ -51,12 +51,40 @@
             <option>Select Below Currency</option>
             <option value="USD">USD</option>
             <option value="INR">INR</option>
+            <option value="AFN">Afghanistan</option>
+            <option value="AUD">Australian Dollar</option>
+            <option value="EUR">Euro</option>
+            <option value="BHD">Baharain</option>
+            <option value="BDT">Bangladesh</option>
+            <option value="BYN">Belarus</option>
+            <option value="BTN">Bhutan</option>
+            <option value="BRL">Brazil</option>
+            <option value="BIF">Burundi</option>
+            <option value="KHR">Cambodia</option>
+            <option value="CAD">Canada</option>
+            <option value="CNY">China</option>
+            <option value="COP">Colombia</option>
+            <option value="IDR">Indonesia</option>
         </select>
         
         To:<select name="down" class="form-select">
             <option>Selec Below Currency</option>
             <option value="USD">USD</option>
             <option value="INR">INR</option>
+            <option value="AFN">Afghanistan</option>
+            <option value="AUD">Australian Dollar</option>
+            <option value="EUR">Euro</option>
+            <option value="BHD">Baharain</option>
+            <option value="BDT">Bangladesh</option>
+            <option value="BYN">Belarus</option>
+            <option value="BTN">Bhutan</option>
+            <option value="BRL">Brazil</option>
+            <option value="BIF">Burundi</option>
+            <option value="KHR">Cambodia</option>
+            <option value="CAD">Canada</option>
+            <option value="CNY">China</option>
+            <option value="COP">Colombia</option>
+            <option value="IDR">Indonesia</option>
         </select>
         
         Enter Amount:<input type="number" name="amount" class="form-control "/>
@@ -87,21 +115,21 @@
             fetch(`https://api.exchangerate-api.com/v4/latest/${data1}`)
             .then(response=>response.json())
             .then(data=>{
-                  
+                console.log(data);
                 drop1 = document.myform.down.value;
                 rate = data.rates[drop1];
 
                 new_amount = amount*rate;
                 
                 document.getElementById("id").innerHTML = new_amount;
-                console.log(data);
+                
             })
 
         }
     </script>
     <div class="container">
         <div class="row">
-           <div class="col-lg-6 offset-lg-4">
+           <div class="col-lg-6 col-sm-12 offset-lg-4">
             <input type="submit" onclick="DataFetching()" value="Convert" class="btn btn-danger" />
            </div>
         </div>
