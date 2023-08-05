@@ -6,7 +6,7 @@
 
     <style>
         .h1{
-            background-color: antiquewhite;
+            background-color: rgb(245, 215, 176,0.5);
             height: 200px;
         }
         .h11{
@@ -15,18 +15,28 @@
         }
         .h2{
             color:blue;
-            background-color: aquamarine;
+            background-color: rgb(12, 240, 164,0.5);
             text-align: center;
         }
         span{
             color:red;
+        }
+
+        body{
+            background-image: url('https://img.freepik.com/free-vector/indian-rupee-coins-falling-background_23-2148005172.jpg?w=740&t=st=1691232258~exp=1691232858~hmac=31d40182f2bb3662bffdbbaf15fcdfc53dde23752b968f82ea52e45faf22cc25');
+        }
+        input[type="number"]{
+            color: blue;
+        }
+        option{
+            color: red;
         }
     </style>
 </head>
 <body>
      <div class="container">
         <div class="row">
-            <div class="col-4 offset-4 h2 mt-3">
+            <div class="col-lg-4 col-sm-12 offset-lg-4 h2 mt-3">
                   <h2>Currency Converter</h2>
             </div>
         </div>
@@ -89,7 +99,7 @@
     </script>
     <div class="container">
         <div class="row">
-            <input type="submit" onclick="DataFetching()" value="Convert" class="bg-success" />
+            <input type="submit" onclick="DataFetching()" value="Convert" class="bg-danger" />
         </div>
     </div>
     
